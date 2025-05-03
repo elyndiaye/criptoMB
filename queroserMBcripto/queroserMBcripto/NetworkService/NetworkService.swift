@@ -24,8 +24,6 @@ class NetworkService: NetworkServiceProtocol {
         request.addValue(apiKey, forHTTPHeaderField: "X-CoinAPI-Key")
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            print(data)
-            print(error)
             if let error = error {
                 DispatchQueue.main.async {
                     completion(.failure(error))
