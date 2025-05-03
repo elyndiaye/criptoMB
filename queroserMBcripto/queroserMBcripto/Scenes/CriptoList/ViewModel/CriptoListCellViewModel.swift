@@ -31,7 +31,6 @@ class CriptoListCellViewModel {
         id = "Id: \(model.exchangeId ?? "Desconhecido")"
 
         let volume = model.volume1dayUsd ?? 0
-        print(volume)
         dailyVolumeUsdText = NumberFormatter.currency.string(fromValue: volume)
 
         exchangeIconURL = imageUrl

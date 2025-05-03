@@ -22,6 +22,7 @@ final class CriptoListCoordinator {
 // MARK: - ExchangesListCoordinatorProtocol
 extension CriptoListCoordinator:CriptoListCoordinatorProtocol {
     func navigateToDetailsScene(exchanges: ExchangeModel, exchangesImage: ExchangeImageModel) {
-        debugPrint("Todo")
+        let criptoDetailScene = CriptoDetailFactory.make(exchange: exchanges)
+        navigationController.pushViewController(criptoDetailScene, animated: true)
     }
 }

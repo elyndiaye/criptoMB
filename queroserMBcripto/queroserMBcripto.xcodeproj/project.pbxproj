@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		67A8848F2DC3F1D00007FC3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A8848E2DC3F1D00007FC3F /* AppDelegate.swift */; };
 		67A884912DC3F1D00007FC3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884902DC3F1D00007FC3F /* SceneDelegate.swift */; };
-		67A884932DC3F1D00007FC3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884922DC3F1D00007FC3F /* ViewController.swift */; };
-		67A884962DC3F1D00007FC3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67A884942DC3F1D00007FC3F /* Main.storyboard */; };
 		67A884982DC3F1DA0007FC3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67A884972DC3F1DA0007FC3F /* Assets.xcassets */; };
 		67A8849B2DC3F1DA0007FC3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67A884992DC3F1DA0007FC3F /* LaunchScreen.storyboard */; };
 		67A884A72DC3F6090007FC3F /* CriptoListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884A22DC3F6090007FC3F /* CriptoListContract.swift */; };
@@ -32,14 +30,17 @@
 		67A884CC2DC4FFC00007FC3F /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884CB2DC4FFC00007FC3F /* UIStackView.swift */; };
 		67A884CE2DC50B180007FC3F /* CriptoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884CD2DC50B180007FC3F /* CriptoListCoordinator.swift */; };
 		67A884D12DC515570007FC3F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884D02DC515570007FC3F /* NetworkService.swift */; };
+		67A884D72DC553A60007FC3F /* CriptoDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884D22DC553A60007FC3F /* CriptoDetailContract.swift */; };
+		67A884D82DC553A60007FC3F /* CriptoDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884D32DC553A60007FC3F /* CriptoDetailPresenter.swift */; };
+		67A884DA2DC553A60007FC3F /* CriptoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884D52DC553A60007FC3F /* CriptoDetailViewController.swift */; };
+		67A884DB2DC553A60007FC3F /* CriptoDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884D62DC553A60007FC3F /* CriptoDetailInteractor.swift */; };
+		67A884DE2DC55AB30007FC3F /* CriptoDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884DD2DC55AB30007FC3F /* CriptoDetailFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		67A8848B2DC3F1D00007FC3F /* queroserMBcripto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = queroserMBcripto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67A8848E2DC3F1D00007FC3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67A884902DC3F1D00007FC3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		67A884922DC3F1D00007FC3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		67A884952DC3F1D00007FC3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		67A884972DC3F1DA0007FC3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67A8849A2DC3F1DA0007FC3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67A8849C2DC3F1DA0007FC3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +63,11 @@
 		67A884CB2DC4FFC00007FC3F /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		67A884CD2DC50B180007FC3F /* CriptoListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoListCoordinator.swift; sourceTree = "<group>"; };
 		67A884D02DC515570007FC3F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		67A884D22DC553A60007FC3F /* CriptoDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoDetailContract.swift; sourceTree = "<group>"; };
+		67A884D32DC553A60007FC3F /* CriptoDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoDetailPresenter.swift; sourceTree = "<group>"; };
+		67A884D52DC553A60007FC3F /* CriptoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoDetailViewController.swift; sourceTree = "<group>"; };
+		67A884D62DC553A60007FC3F /* CriptoDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoDetailInteractor.swift; sourceTree = "<group>"; };
+		67A884DD2DC55AB30007FC3F /* CriptoDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoDetailFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +105,6 @@
 				67A884AC2DC3F6140007FC3F /* Scenes */,
 				67A8848E2DC3F1D00007FC3F /* AppDelegate.swift */,
 				67A884902DC3F1D00007FC3F /* SceneDelegate.swift */,
-				67A884922DC3F1D00007FC3F /* ViewController.swift */,
-				67A884942DC3F1D00007FC3F /* Main.storyboard */,
 				67A884972DC3F1DA0007FC3F /* Assets.xcassets */,
 				67A884992DC3F1DA0007FC3F /* LaunchScreen.storyboard */,
 				67A8849C2DC3F1DA0007FC3F /* Info.plist */,
@@ -111,6 +115,7 @@
 		67A884AC2DC3F6140007FC3F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				67A884DC2DC554FE0007FC3F /* CriptoDetail */,
 				67A884AD2DC3F61F0007FC3F /* CriptoList */,
 			);
 			path = Scenes;
@@ -180,6 +185,18 @@
 			path = NetworkService;
 			sourceTree = "<group>";
 		};
+		67A884DC2DC554FE0007FC3F /* CriptoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				67A884D22DC553A60007FC3F /* CriptoDetailContract.swift */,
+				67A884D32DC553A60007FC3F /* CriptoDetailPresenter.swift */,
+				67A884D52DC553A60007FC3F /* CriptoDetailViewController.swift */,
+				67A884D62DC553A60007FC3F /* CriptoDetailInteractor.swift */,
+				67A884DD2DC55AB30007FC3F /* CriptoDetailFactory.swift */,
+			);
+			path = CriptoDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,7 +257,6 @@
 			files = (
 				67A8849B2DC3F1DA0007FC3F /* LaunchScreen.storyboard in Resources */,
 				67A884982DC3F1DA0007FC3F /* Assets.xcassets in Resources */,
-				67A884962DC3F1D00007FC3F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,15 +267,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67A884D82DC553A60007FC3F /* CriptoDetailPresenter.swift in Sources */,
 				67A884C52DC481E60007FC3F /* ExchangeListModel.swift in Sources */,
 				67A884AF2DC402B50007FC3F /* CriptoListFactory.swift in Sources */,
 				67A884D12DC515570007FC3F /* NetworkService.swift in Sources */,
 				67A884B92DC46EFC0007FC3F /* SetupView.swift in Sources */,
 				67A884B72DC46D230007FC3F /* Colors.swift in Sources */,
-				67A884932DC3F1D00007FC3F /* ViewController.swift in Sources */,
 				67A884CE2DC50B180007FC3F /* CriptoListCoordinator.swift in Sources */,
 				67A884B22DC469250007FC3F /* CriptoListTableView.swift in Sources */,
 				67A884C22DC4811C0007FC3F /* CriptoListCellViewModel.swift in Sources */,
+				67A884DB2DC553A60007FC3F /* CriptoDetailInteractor.swift in Sources */,
 				67A884A82DC3F6090007FC3F /* CriptoListPresenter.swift in Sources */,
 				67A884CA2DC494080007FC3F /* CriptoListService.swift in Sources */,
 				67A8848F2DC3F1D00007FC3F /* AppDelegate.swift in Sources */,
@@ -267,10 +284,13 @@
 				67A884C82DC48A300007FC3F /* URLSession.swift in Sources */,
 				67A884BB2DC46FF10007FC3F /* Spacing.swift in Sources */,
 				67A884A72DC3F6090007FC3F /* CriptoListContract.swift in Sources */,
+				67A884DA2DC553A60007FC3F /* CriptoDetailViewController.swift in Sources */,
 				67A884912DC3F1D00007FC3F /* SceneDelegate.swift in Sources */,
 				67A884BD2DC475B30007FC3F /* UILabel.swift in Sources */,
 				67A884CC2DC4FFC00007FC3F /* UIStackView.swift in Sources */,
+				67A884DE2DC55AB30007FC3F /* CriptoDetailFactory.swift in Sources */,
 				67A884AB2DC3F6090007FC3F /* CriptoListInteractor.swift in Sources */,
+				67A884D72DC553A60007FC3F /* CriptoDetailContract.swift in Sources */,
 				67A884B42DC4693A0007FC3F /* CriptoListCell.swift in Sources */,
 				67A884AA2DC3F6090007FC3F /* CriptoListViewController.swift in Sources */,
 			);
@@ -279,14 +299,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		67A884942DC3F1D00007FC3F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				67A884952DC3F1D00007FC3F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		67A884992DC3F1DA0007FC3F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -423,7 +435,7 @@
 				INFOPLIST_FILE = queroserMBcripto/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -450,7 +462,7 @@
 				INFOPLIST_FILE = queroserMBcripto/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
