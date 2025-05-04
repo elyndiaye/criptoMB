@@ -74,7 +74,7 @@ final class CriptoListInteractorTests: XCTestCase {
     }
     
     
-    func testLoadExchangeListSuccess() {
+    func testLoadExchangeListSuccess_WhenCalledLoadExchanges_ShouldShowExchangeList() {
         sut.loadExchangeList()
                   XCTAssertTrue(self.serviceSpy.getExchangeListCalled)
                   XCTAssertTrue(self.serviceSpy.getExchangeImageCalled)
