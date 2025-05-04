@@ -26,7 +26,6 @@
 		67A884C22DC4811C0007FC3F /* CriptoListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884C12DC4811C0007FC3F /* CriptoListCellViewModel.swift */; };
 		67A884C52DC481E60007FC3F /* ExchangeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884C42DC481E60007FC3F /* ExchangeListModel.swift */; };
 		67A884C82DC48A300007FC3F /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884C72DC48A300007FC3F /* URLSession.swift */; };
-		67A884CA2DC494080007FC3F /* CriptoListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884C92DC494080007FC3F /* CriptoListService.swift */; };
 		67A884CC2DC4FFC00007FC3F /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884CB2DC4FFC00007FC3F /* UIStackView.swift */; };
 		67A884CE2DC50B180007FC3F /* CriptoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884CD2DC50B180007FC3F /* CriptoListCoordinator.swift */; };
 		67A884D12DC515570007FC3F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884D02DC515570007FC3F /* NetworkService.swift */; };
@@ -35,7 +34,24 @@
 		67A884DA2DC553A60007FC3F /* CriptoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884D52DC553A60007FC3F /* CriptoDetailViewController.swift */; };
 		67A884DB2DC553A60007FC3F /* CriptoDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884D62DC553A60007FC3F /* CriptoDetailInteractor.swift */; };
 		67A884DE2DC55AB30007FC3F /* CriptoDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884DD2DC55AB30007FC3F /* CriptoDetailFactory.swift */; };
+		67AD8F6E2DC6A95200FC28F2 /* CriptoListCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AD8F6D2DC6A95200FC28F2 /* CriptoListCoordinatorTests.swift */; };
+		67AD8F702DC6AD9900FC28F2 /* CriptoListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AD8F6F2DC6AD9900FC28F2 /* CriptoListPresenterTests.swift */; };
+		67AD8F722DC6C58800FC28F2 /* CriptoListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AD8F712DC6C58800FC28F2 /* CriptoListInteractorTests.swift */; };
+		67CEE1FA2DC6E0CD00D809FF /* CriptoDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CEE1F92DC6E0CD00D809FF /* CriptoDetailPresenterTests.swift */; };
+		67CEE1FC2DC6E6B200D809FF /* CriptoDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CEE1FB2DC6E6B200D809FF /* CriptoDetailInteractorTests.swift */; };
+		67CEE1FE2DC6FB4300D809FF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CEE1FD2DC6FB4200D809FF /* Strings.swift */; };
+		67CEE2002DC6FEFA00D809FF /* CriptoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CEE1FF2DC6FEF900D809FF /* CriptoUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67AD8F632DC6A6D100FC28F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67A884832DC3F1D00007FC3F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67A8848A2DC3F1D00007FC3F;
+			remoteInfo = queroserMBcripto;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		67A8848B2DC3F1D00007FC3F /* queroserMBcripto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = queroserMBcripto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,7 +75,6 @@
 		67A884C12DC4811C0007FC3F /* CriptoListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoListCellViewModel.swift; sourceTree = "<group>"; };
 		67A884C42DC481E60007FC3F /* ExchangeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListModel.swift; sourceTree = "<group>"; };
 		67A884C72DC48A300007FC3F /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
-		67A884C92DC494080007FC3F /* CriptoListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoListService.swift; sourceTree = "<group>"; };
 		67A884CB2DC4FFC00007FC3F /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		67A884CD2DC50B180007FC3F /* CriptoListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoListCoordinator.swift; sourceTree = "<group>"; };
 		67A884D02DC515570007FC3F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -68,10 +83,25 @@
 		67A884D52DC553A60007FC3F /* CriptoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoDetailViewController.swift; sourceTree = "<group>"; };
 		67A884D62DC553A60007FC3F /* CriptoDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoDetailInteractor.swift; sourceTree = "<group>"; };
 		67A884DD2DC55AB30007FC3F /* CriptoDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoDetailFactory.swift; sourceTree = "<group>"; };
+		67AD8F5F2DC6A6D000FC28F2 /* queroserMBcriptoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = queroserMBcriptoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67AD8F6D2DC6A95200FC28F2 /* CriptoListCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoListCoordinatorTests.swift; sourceTree = "<group>"; };
+		67AD8F6F2DC6AD9900FC28F2 /* CriptoListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoListPresenterTests.swift; sourceTree = "<group>"; };
+		67AD8F712DC6C58800FC28F2 /* CriptoListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoListInteractorTests.swift; sourceTree = "<group>"; };
+		67CEE1F92DC6E0CD00D809FF /* CriptoDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoDetailPresenterTests.swift; sourceTree = "<group>"; };
+		67CEE1FB2DC6E6B200D809FF /* CriptoDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoDetailInteractorTests.swift; sourceTree = "<group>"; };
+		67CEE1FD2DC6FB4200D809FF /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		67CEE1FF2DC6FEF900D809FF /* CriptoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		67A884882DC3F1D00007FC3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67AD8F5C2DC6A6D000FC28F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -85,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				67A8848D2DC3F1D00007FC3F /* queroserMBcripto */,
+				67AD8F602DC6A6D100FC28F2 /* queroserMBcriptoTests */,
 				67A8848C2DC3F1D00007FC3F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				67A8848B2DC3F1D00007FC3F /* queroserMBcripto.app */,
+				67AD8F5F2DC6A6D000FC28F2 /* queroserMBcriptoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,7 +164,6 @@
 				67A884A52DC3F6090007FC3F /* CriptoListViewController.swift */,
 				67A884A62DC3F6090007FC3F /* CriptoListInteractor.swift */,
 				67A884AE2DC402B50007FC3F /* CriptoListFactory.swift */,
-				67A884C92DC494080007FC3F /* CriptoListService.swift */,
 				67A884CD2DC50B180007FC3F /* CriptoListCoordinator.swift */,
 			);
 			path = CriptoList;
@@ -157,6 +188,7 @@
 				67A884BE2DC47A7A0007FC3F /* Helper.swift */,
 				67A884C72DC48A300007FC3F /* URLSession.swift */,
 				67A884CB2DC4FFC00007FC3F /* UIStackView.swift */,
+				67CEE1FD2DC6FB4200D809FF /* Strings.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -197,6 +229,43 @@
 			path = CriptoDetail;
 			sourceTree = "<group>";
 		};
+		67AD8F602DC6A6D100FC28F2 /* queroserMBcriptoTests */ = {
+			isa = PBXGroup;
+			children = (
+				67AD8F682DC6A89900FC28F2 /* Scenes */,
+				67CEE1FF2DC6FEF900D809FF /* CriptoUITests.swift */,
+			);
+			path = queroserMBcriptoTests;
+			sourceTree = "<group>";
+		};
+		67AD8F682DC6A89900FC28F2 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				67CEE1F82DC6E08600D809FF /* CriptoDetail */,
+				67AD8F692DC6A8B100FC28F2 /* CriptoList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		67AD8F692DC6A8B100FC28F2 /* CriptoList */ = {
+			isa = PBXGroup;
+			children = (
+				67AD8F6D2DC6A95200FC28F2 /* CriptoListCoordinatorTests.swift */,
+				67AD8F6F2DC6AD9900FC28F2 /* CriptoListPresenterTests.swift */,
+				67AD8F712DC6C58800FC28F2 /* CriptoListInteractorTests.swift */,
+			);
+			path = CriptoList;
+			sourceTree = "<group>";
+		};
+		67CEE1F82DC6E08600D809FF /* CriptoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				67CEE1F92DC6E0CD00D809FF /* CriptoDetailPresenterTests.swift */,
+				67CEE1FB2DC6E6B200D809FF /* CriptoDetailInteractorTests.swift */,
+			);
+			path = CriptoDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,6 +286,24 @@
 			productReference = 67A8848B2DC3F1D00007FC3F /* queroserMBcripto.app */;
 			productType = "com.apple.product-type.application";
 		};
+		67AD8F5E2DC6A6D000FC28F2 /* queroserMBcriptoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67AD8F672DC6A6D100FC28F2 /* Build configuration list for PBXNativeTarget "queroserMBcriptoTests" */;
+			buildPhases = (
+				67AD8F5B2DC6A6D000FC28F2 /* Sources */,
+				67AD8F5C2DC6A6D000FC28F2 /* Frameworks */,
+				67AD8F5D2DC6A6D000FC28F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67AD8F642DC6A6D100FC28F2 /* PBXTargetDependency */,
+			);
+			name = queroserMBcriptoTests;
+			productName = queroserMBcriptoTests;
+			productReference = 67AD8F5F2DC6A6D000FC28F2 /* queroserMBcriptoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -229,6 +316,10 @@
 				TargetAttributes = {
 					67A8848A2DC3F1D00007FC3F = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					67AD8F5E2DC6A6D000FC28F2 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 67A8848A2DC3F1D00007FC3F;
 					};
 				};
 			};
@@ -246,6 +337,7 @@
 			projectRoot = "";
 			targets = (
 				67A8848A2DC3F1D00007FC3F /* queroserMBcripto */,
+				67AD8F5E2DC6A6D000FC28F2 /* queroserMBcriptoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -257,6 +349,13 @@
 			files = (
 				67A8849B2DC3F1DA0007FC3F /* LaunchScreen.storyboard in Resources */,
 				67A884982DC3F1DA0007FC3F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67AD8F5D2DC6A6D000FC28F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,8 +376,8 @@
 				67A884B22DC469250007FC3F /* CriptoListTableView.swift in Sources */,
 				67A884C22DC4811C0007FC3F /* CriptoListCellViewModel.swift in Sources */,
 				67A884DB2DC553A60007FC3F /* CriptoDetailInteractor.swift in Sources */,
+				67CEE1FE2DC6FB4300D809FF /* Strings.swift in Sources */,
 				67A884A82DC3F6090007FC3F /* CriptoListPresenter.swift in Sources */,
-				67A884CA2DC494080007FC3F /* CriptoListService.swift in Sources */,
 				67A8848F2DC3F1D00007FC3F /* AppDelegate.swift in Sources */,
 				67A884BF2DC47A7A0007FC3F /* Helper.swift in Sources */,
 				67A884C82DC48A300007FC3F /* URLSession.swift in Sources */,
@@ -296,7 +395,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		67AD8F5B2DC6A6D000FC28F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67CEE2002DC6FEFA00D809FF /* CriptoUITests.swift in Sources */,
+				67CEE1FC2DC6E6B200D809FF /* CriptoDetailInteractorTests.swift in Sources */,
+				67AD8F6E2DC6A95200FC28F2 /* CriptoListCoordinatorTests.swift in Sources */,
+				67CEE1FA2DC6E0CD00D809FF /* CriptoDetailPresenterTests.swift in Sources */,
+				67AD8F722DC6C58800FC28F2 /* CriptoListInteractorTests.swift in Sources */,
+				67AD8F702DC6AD9900FC28F2 /* CriptoListPresenterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67AD8F642DC6A6D100FC28F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67A8848A2DC3F1D00007FC3F /* queroserMBcripto */;
+			targetProxy = 67AD8F632DC6A6D100FC28F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		67A884992DC3F1DA0007FC3F /* LaunchScreen.storyboard */ = {
@@ -478,6 +598,40 @@
 			};
 			name = Release;
 		};
+		67AD8F652DC6A6D100FC28F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ndiaye.queroserMBcriptoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/queroserMBcripto.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/queroserMBcripto";
+			};
+			name = Debug;
+		};
+		67AD8F662DC6A6D100FC28F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ndiaye.queroserMBcriptoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/queroserMBcripto.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/queroserMBcripto";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -495,6 +649,15 @@
 			buildConfigurations = (
 				67A884A02DC3F1DA0007FC3F /* Debug */,
 				67A884A12DC3F1DA0007FC3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67AD8F672DC6A6D100FC28F2 /* Build configuration list for PBXNativeTarget "queroserMBcriptoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67AD8F652DC6A6D100FC28F2 /* Debug */,
+				67AD8F662DC6A6D100FC28F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -17,14 +17,14 @@ extension URLSession {
                 }
                 return
             }
-
+            
             guard let data = data, let image = UIImage(data: data) else {
                 DispatchQueue.main.async {
                     completion(nil)
                 }
                 return
             }
-
+            
             DispatchQueue.main.async {
                 completion(image)
             }

@@ -9,17 +9,17 @@
 import Foundation
 
 final class CriptoListInteractor{
-
+    
     private let service: NetworkServiceProtocol
     private let presenter: CriptoListPresenterProtocol
     var exchangeList: [ExchangeModel] = []
     var exchangeImages: [ExchangeImageModel] = []
-
-       init(service: NetworkServiceProtocol, presenter: CriptoListPresenterProtocol) {
-           self.service = service
-           self.presenter = presenter
-       }
-   }
+    
+    init(service: NetworkServiceProtocol, presenter: CriptoListPresenterProtocol) {
+        self.service = service
+        self.presenter = presenter
+    }
+}
 
 
 extension  CriptoListInteractor: CriptoListInteractorProtocol {
@@ -35,13 +35,12 @@ extension  CriptoListInteractor: CriptoListInteractorProtocol {
     func showDetails(indexPath: IndexPath) {
         let exchange = exchangeList[indexPath.section]
         guard let exchangeId = exchange.exchangeId else {
-            print("Error: ID not found")
             return
         }
-
+        
         let imageModel = exchangeImages.first(where: { $0.exchangeId == exchangeId }) ??
-                        ExchangeImageModel(exchangeId: exchange.exchangeId, url: nil)
-
+        ExchangeImageModel(exchangeId: exchange.exchangeId, url: nil)
+        
         presenter.showDetails(exchanges: exchange, exchangesIcon: imageModel)
     }
     
@@ -60,7 +59,7 @@ private extension CriptoListInteractor {
             }
         }
     }
-
+    
     func fetchExchangeImage(completion: @escaping () -> Void) {
         service.getExchangeImage { [weak self] result in
             switch result {
@@ -68,7 +67,7 @@ private extension CriptoListInteractor {
                 self?.exchangeImages = fetchedImages
                 completion()
             case .failure(let error):
-                print(error.localizedDescription)
+                debugPrint(error.localizedDescription)
             }
         }
     }

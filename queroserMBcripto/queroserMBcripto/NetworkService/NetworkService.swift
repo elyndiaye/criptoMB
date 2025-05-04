@@ -15,7 +15,7 @@ protocol NetworkServiceProtocol {
 
 class NetworkService: NetworkServiceProtocol {
     private let baseURL = "https://rest.coinapi.io/v1"
-    private let apiKey = "3807A772-1841-409F-B8DA-5A2E2110A687"
+    private let apiKey = "5c9da08a-2d38-42ae-ae2d-7020aae0caa5"
     
     func getExchangeList(completion: @escaping (Result<[ExchangeModel], Error>) -> Void) {
         let urlString = "\(baseURL)/exchanges"
@@ -43,7 +43,6 @@ class NetworkService: NetworkServiceProtocol {
                 let decoder = JSONDecoder()
                 let exchanges = try decoder.decode([ExchangeModel].self, from: data)
                 DispatchQueue.main.async {
-                    print(exchanges)
                     completion(.success(exchanges))
                 }
             } catch let parseError {

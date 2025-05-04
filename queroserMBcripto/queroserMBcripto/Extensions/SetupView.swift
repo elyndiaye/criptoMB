@@ -22,7 +22,7 @@ extension SetupView {
         setupStyles()
     }
 
-    func setupStyles() { }
+    func setupStyles() {}
     func configureView() {}
 }
 

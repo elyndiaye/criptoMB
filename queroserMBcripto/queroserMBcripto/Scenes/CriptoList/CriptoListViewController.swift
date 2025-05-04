@@ -12,6 +12,7 @@ import UIKit
 protocol CriptoListViewControllerProtocol: AnyObject {
     func displayList(exchangeList: [CriptoListCellViewModel])
     func displayError()
+    func stopLoading()
 }
 
 class CriptoListViewController: UIViewController {
@@ -22,23 +23,6 @@ class CriptoListViewController: UIViewController {
         let tableView = CriptoListTableView()
         tableView.criptoListTableViewDelegate = self
         return tableView
-    }()
-
-    private lazy var errorFetchListLabel: UILabel = UILabel.make(font: UIFont.boldSystemFont(ofSize: 32),
-                                                                         text: "Não foi possível carregar as informações",
-                                                                         textAlignment: .center)
-    
-    private lazy var errorStackView: UIStackView = UIStackView.make(distribution: .fillProportionally,
-                                                                         spacing: Spacing.space2)
-    
-    private lazy var retryFetchListButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Tentar novamente", for: .normal)
-        button.setTitleColor(Colors.gray.color, for: .normal)
-        button.backgroundColor = UIColor.white
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(retryFetchList), for: .touchUpInside)
-        return button
     }()
     
     private lazy var activityIndicator: UIActivityIndicatorView = {
@@ -54,7 +38,7 @@ class CriptoListViewController: UIViewController {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -65,70 +49,51 @@ class CriptoListViewController: UIViewController {
         buildView()
         interactor.loadExchangeList()
     }
-
-    @objc func retryFetchList() {
-        interactor.loadExchangeList()
-    }
 }
 
 extension CriptoListViewController: SetupView {
     func setupHierarchy() {
-        errorStackView.addArrangedSubviews(errorFetchListLabel,
-                                           retryFetchListButton)
-        view.addSubviews(activityIndicator, errorStackView, exchangeListTable)
+        view.addSubviews(activityIndicator, exchangeListTable)
     }
-
+    
     func setupConstraints() {
-        errorStackView.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([
             exchangeListTable.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Spacing.space2),
             exchangeListTable.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             exchangeListTable.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.space3),
             exchangeListTable.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.space3)
         ])
-
+        
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-
-        NSLayoutConstraint.activate([
-            errorStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            errorStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            errorStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.space3),
-            errorStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.space3)
-        ])
-
     }
-
+    
     func setupStyles() {
         view.backgroundColor = Colors.black.color
-//        let backItem = UIBarButtonItem()
-//        backItem.title = "Voltar"
-//        navigationItem.backBarButtonItem = backItem
         exchangeListTable.accessibilityIdentifier = "CriptoListTableViewAccessibilityIdentifier"
         activityIndicator.accessibilityIdentifier = "SomeUniqueIdentifierForActivityIndicator"
         exchangeListTable.isHidden = true
-        errorStackView.isHidden = true
         activityIndicator.startAnimating()
     }
     
     func stopLoading() {
         activityIndicator.stopAnimating()
         exchangeListTable.isHidden = false
-        errorStackView.isHidden = true
+    }
+    
+    func startLoading() {
+        exchangeListTable.isHidden = true
+        activityIndicator.startAnimating()
     }
     
 }
 
-
 extension CriptoListViewController: CriptoListTableViewDelegate{
     func didTapExchange(at indexPath: IndexPath) {
-        //Call Presenter and todo
-        print("TODO")
+        interactor.showDetails(indexPath: indexPath)
     }
-    
 }
 
 // MARK: - CriptoListViewControllerProtocol
@@ -140,8 +105,15 @@ extension CriptoListViewController: CriptoListViewControllerProtocol{
     }
     
     func displayError() {
-       activityIndicator.stopAnimating()
-        errorStackView.isHidden = false
+        activityIndicator.stopAnimating()
+        let alert = UIAlertController(title: CriptoStrings.somethingWrong, message: CriptoStrings.tryAgainLater, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title:CriptoStrings.tryAgain, style: .default) { action in
+            self.startLoading()
+            self.interactor.loadExchangeList()
+        }
+        alert.addAction(action)
+        present(alert, animated: true)
     }
     
 }
