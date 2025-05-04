@@ -27,8 +27,8 @@ class CriptoListCellViewModel {
 
     // MARK: - Initializers
     init(from model: ExchangeModel, imageUrl: URL?) {
-        name = model.name ?? "Não encontrado"
-        id = "Id: \(model.exchangeId ?? "Desconhecido")"
+        name = model.name ?? CriptoStrings.notFound
+        id = "Id: \(model.exchangeId ?? CriptoStrings.unknow)"
 
         let volume = model.volume1dayUsd ?? 0
         dailyVolumeUsdText = NumberFormatter.currency.string(fromValue: volume)
