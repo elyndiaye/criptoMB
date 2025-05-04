@@ -54,8 +54,8 @@ private extension CriptoListInteractor {
             case .success(let fetchedExchanges):
                 self.exchangeList = fetchedExchanges
                 completion()
-            case .failure:
-                self.presenter.showError()
+            case .failure(let error):
+                self.presenter.showError(apiError: error)
             }
         }
     }

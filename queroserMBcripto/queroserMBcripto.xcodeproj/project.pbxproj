@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		676E1A492DC7E3C400C2C2A5 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676E1A482DC7E3C300C2C2A5 /* ApiError.swift */; };
 		67A8848F2DC3F1D00007FC3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A8848E2DC3F1D00007FC3F /* AppDelegate.swift */; };
 		67A884912DC3F1D00007FC3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A884902DC3F1D00007FC3F /* SceneDelegate.swift */; };
 		67A884982DC3F1DA0007FC3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67A884972DC3F1DA0007FC3F /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		676E1A482DC7E3C300C2C2A5 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		67A8848B2DC3F1D00007FC3F /* queroserMBcripto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = queroserMBcripto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67A8848E2DC3F1D00007FC3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67A884902DC3F1D00007FC3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				67A884C72DC48A300007FC3F /* URLSession.swift */,
 				67A884CB2DC4FFC00007FC3F /* UIStackView.swift */,
 				67CEE1FD2DC6FB4200D809FF /* Strings.swift */,
+				676E1A482DC7E3C300C2C2A5 /* ApiError.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				67A884CC2DC4FFC00007FC3F /* UIStackView.swift in Sources */,
 				67A884DE2DC55AB30007FC3F /* CriptoDetailFactory.swift in Sources */,
 				67A884AB2DC3F6090007FC3F /* CriptoListInteractor.swift in Sources */,
+				676E1A492DC7E3C400C2C2A5 /* ApiError.swift in Sources */,
 				67A884D72DC553A60007FC3F /* CriptoDetailContract.swift in Sources */,
 				67A884B42DC4693A0007FC3F /* CriptoListCell.swift in Sources */,
 				67A884AA2DC3F6090007FC3F /* CriptoListViewController.swift in Sources */,

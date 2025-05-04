@@ -32,8 +32,8 @@ extension CriptoListPresenter: CriptoListPresenterProtocol {
         coordinator.navigateToDetailsScene(exchanges: exchanges, exchangesImage: exchangesIcon)
     }
     
-    func showError() {
-        viewController?.displayError()
+    func showError(apiError: ApiError) {
+        viewController?.displayError(apiError: apiError)
     }
 }
 

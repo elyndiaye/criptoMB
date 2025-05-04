@@ -17,4 +17,5 @@ enum CriptoStrings {
     static let somethingWrong = "Ops! Algo deu errado"
     static let tryAgainLater = "Tente novamente mais tarde"
     static let tryAgain = "Tentar novamente"
+    static let verifyYourConnection = "Verifique sua conexão"
 }

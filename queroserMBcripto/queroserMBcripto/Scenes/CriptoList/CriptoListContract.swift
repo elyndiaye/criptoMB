@@ -17,7 +17,7 @@ protocol CriptoListCoordinatorProtocol: AnyObject {
 protocol CriptoListPresenterProtocol: AnyObject {
     func showExchangeList(exchanges: [ExchangeModel], exchangesIcon: [ExchangeImageModel])
     func showDetails(exchanges: ExchangeModel, exchangesIcon: ExchangeImageModel)
-    func showError()
+    func showError(apiError: ApiError)
 }
 
 

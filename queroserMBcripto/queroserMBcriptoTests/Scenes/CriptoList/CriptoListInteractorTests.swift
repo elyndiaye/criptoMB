@@ -24,7 +24,7 @@ private final class CriptoListPresernterSpy: CriptoListPresenterProtocol {
         calledMethods.append(.showDetails(exchanges: exchanges, exchangesIcon: exchangesIcon))
     }
     
-    func showError() {
+    func showError(apiError: ApiError) {
         calledMethods.append(.showError)
     }
 }
@@ -37,19 +37,19 @@ private final class NetworkServiceSpy: NetworkServiceProtocol {
            var exchangeListMock: [ExchangeModel] = []
            var exchangeImageListMock: [ExchangeImageModel] = []
     
-    func getExchangeList(completion: @escaping (Result<[ExchangeModel], Error>) -> Void) {
+    func getExchangeList(completion: @escaping (Result<[ExchangeModel], ApiError>) -> Void) {
         getExchangeListCalled = true
                    if shouldReturnError {
-                       completion(.failure(NSError(domain: "Error", code: -1, userInfo: nil)))
+                       completion(.failure(.timeout))
                    } else {
                        completion(.success(exchangeListMock))
                    }
     }
     
-    func getExchangeImage(completion: @escaping (Result<[ExchangeImageModel], Error>) -> Void) {
+    func getExchangeImage(completion: @escaping (Result<[ExchangeImageModel], ApiError>) -> Void) {
         getExchangeImageCalled = true
                    if shouldReturnError {
-                       completion(.failure(NSError(domain: "Error", code: -1, userInfo: nil)))
+                       completion(.failure(.timeout))
                    } else {
                        completion(.success(exchangeImageListMock))
                    }

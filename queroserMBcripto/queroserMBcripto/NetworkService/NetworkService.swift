@@ -8,33 +8,79 @@
 import UIKit
 
 protocol NetworkServiceProtocol {
-    func getExchangeList(completion: @escaping (Result<[ExchangeModel], Error>) -> Void)
-    func getExchangeImage(completion: @escaping (Result<[ExchangeImageModel], Error>) -> Void)
+    func getExchangeList(completion: @escaping (Result<[ExchangeModel], ApiError>) -> Void)
+    func getExchangeImage(completion: @escaping (Result<[ExchangeImageModel], ApiError>) -> Void)
 }
-
 
 class NetworkService: NetworkServiceProtocol {
     private let baseURL = "https://rest.coinapi.io/v1"
     private let apiKey = "5c9da08a-2d38-42ae-ae2d-7020aae0caa5"
-    
-    func getExchangeList(completion: @escaping (Result<[ExchangeModel], Error>) -> Void) {
+
+    func getExchangeList(completion: @escaping (Result<[ExchangeModel], ApiError>) -> Void) {
         let urlString = "\(baseURL)/exchanges"
 
-        var request = URLRequest(url: URL(string: urlString)!)
+        guard let url = URL(string: urlString) else {
+            completion(.failure(.malformedRequest("URL inválida para getExchangeList")))
+            return
+        }
+
+        var request = URLRequest(url: url)
         request.addValue(apiKey, forHTTPHeaderField: "X-CoinAPI-Key")
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
+            if let error = error as NSError? {
+                let apiError: ApiError = {
+                    if error.domain == NSURLErrorDomain {
+                        switch error.code {
+                        case NSURLErrorNotConnectedToInternet:
+                            return .connectionFailure
+                        case NSURLErrorTimedOut:
+                            return .timeout
+                        default:
+                            return .unknown(error)
+                        }
+                    }
+                    return .unknown(error)
+                }()
                 DispatchQueue.main.async {
-                    completion(.failure(error))
+                    completion(.failure(apiError))
                 }
                 return
             }
 
-            guard let data = data else {
-                let noDataError = NSError(domain: "NetworkServiceError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Nenhum dado recebido."])
+            guard let httpResponse = response as? HTTPURLResponse else {
                 DispatchQueue.main.async {
-                    completion(.failure(noDataError))
+                    completion(.failure(.unknown(nil)))
+                }
+                return
+            }
+
+            switch httpResponse.statusCode {
+            case 200:
+                break
+            case 400:
+                completion(.failure(.badRequest))
+                return
+            case 401:
+                completion(.failure(.unauthorized))
+                return
+            case 404:
+                completion(.failure(.notFound))
+                return
+            case 429:
+                completion(.failure(.tooManyRequests))
+                return
+            case 500...599:
+                completion(.failure(.serverError))
+                return
+            default:
+                completion(.failure(.otherErrors))
+                return
+            }
+
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(.failure(.bodyNotFound))
                 }
                 return
             }
@@ -45,42 +91,81 @@ class NetworkService: NetworkServiceProtocol {
                 DispatchQueue.main.async {
                     completion(.success(exchanges))
                 }
-            } catch let parseError {
+            } catch {
                 DispatchQueue.main.async {
-                    completion(.failure(parseError))
+                    completion(.failure(.decodeError(error)))
                 }
             }
         }
 
         task.resume()
     }
-    
-    func getExchangeImage(completion: @escaping (Result<[ExchangeImageModel], Error>) -> Void) {
+
+    func getExchangeImage(completion: @escaping (Result<[ExchangeImageModel], ApiError>) -> Void) {
         let urlString = "\(baseURL)/exchanges/icons/32"
 
         guard let url = URL(string: urlString) else {
-            let invalidURLError = NSError(domain: "NetworkServiceError", code: 2, userInfo: [NSLocalizedDescriptionKey: "Error url invalida."])
-            DispatchQueue.main.async {
-                completion(.failure(invalidURLError))
-            }
+            completion(.failure(.malformedRequest("URL inválida para getExchangeImage")))
             return
         }
 
         var request = URLRequest(url: url)
         request.addValue(apiKey, forHTTPHeaderField: "X-CoinAPI-Key")
 
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error as NSError? {
+                let apiError: ApiError = {
+                    if error.domain == NSURLErrorDomain {
+                        switch error.code {
+                        case NSURLErrorNotConnectedToInternet:
+                            return .connectionFailure
+                        case NSURLErrorTimedOut:
+                            return .timeout
+                        default:
+                            return .unknown(error)
+                        }
+                    }
+                    return .unknown(error)
+                }()
                 DispatchQueue.main.async {
-                    completion(.failure(error))
+                    completion(.failure(apiError))
                 }
                 return
             }
 
-            guard let data = data else {
-                let dataError = NSError(domain: "NetworkServiceError", code: 3, userInfo: [NSLocalizedDescriptionKey: "Dados não recebidos corretamente."])
+            guard let httpResponse = response as? HTTPURLResponse else {
                 DispatchQueue.main.async {
-                    completion(.failure(dataError))
+                    completion(.failure(.unknown(nil)))
+                }
+                return
+            }
+
+            switch httpResponse.statusCode {
+            case 200:
+                break
+            case 400:
+                completion(.failure(.badRequest))
+                return
+            case 401:
+                completion(.failure(.unauthorized))
+                return
+            case 404:
+                completion(.failure(.notFound))
+                return
+            case 429:
+                completion(.failure(.tooManyRequests))
+                return
+            case 500...599:
+                completion(.failure(.serverError))
+                return
+            default:
+                completion(.failure(.otherErrors))
+                return
+            }
+
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(.failure(.bodyNotFound))
                 }
                 return
             }
@@ -94,13 +179,11 @@ class NetworkService: NetworkServiceProtocol {
                 }
             } catch {
                 DispatchQueue.main.async {
-                    completion(.failure(error))
+                    completion(.failure(.decodeError(error)))
                 }
             }
         }
 
         task.resume()
     }
-    
-    
 }

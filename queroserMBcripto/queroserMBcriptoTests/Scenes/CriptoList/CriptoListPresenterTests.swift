@@ -43,7 +43,7 @@ private final class CriptoListViewControllerSpy: CriptoListViewControllerProtoco
         calledMethods.append(.displayList(exchangeList: exchangeList))
     }
     
-    func displayError() {
+    func displayError(apiError: ApiError) {
         calledMethods.append(.displayError)
     }
     
@@ -85,13 +85,13 @@ final class CriptoListPresenterTests: XCTestCase {
     }
     
     func testDisplayErrorWhenShowError_ShouldDisplayError() {
-        sut.showError()
+        sut.showError(apiError: .timeout)
         XCTAssertEqual(viewControllerSpy.calledMethods, [.displayError])
     }
     
     
     func testStopLoading_WhenShowError_ShouldStopLoading() {
-        sut.showError()
+        sut.showError(apiError: .timeout)
         XCTAssertEqual(viewControllerSpy.calledMethods, [.stopLoading])
     }
 

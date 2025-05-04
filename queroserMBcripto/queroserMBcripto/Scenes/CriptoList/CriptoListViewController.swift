@@ -11,7 +11,7 @@ import UIKit
 // MARK: - Protocols
 protocol CriptoListViewControllerProtocol: AnyObject {
     func displayList(exchangeList: [CriptoListCellViewModel])
-    func displayError()
+    func displayError(apiError: ApiError)
     func stopLoading()
 }
 
@@ -104,16 +104,24 @@ extension CriptoListViewController: CriptoListViewControllerProtocol{
         stopLoading()
     }
     
-    func displayError() {
-        activityIndicator.stopAnimating()
-        let alert = UIAlertController(title: CriptoStrings.somethingWrong, message: CriptoStrings.tryAgainLater, preferredStyle: .alert)
-        
-        let action = UIAlertAction(title:CriptoStrings.tryAgain, style: .default) { action in
-            self.startLoading()
-            self.interactor.loadExchangeList()
-        }
-        alert.addAction(action)
-        present(alert, animated: true)
+    func displayError(apiError: ApiError) {
+        DispatchQueue.main.async {
+              self.activityIndicator.stopAnimating()
+              
+              let alert = UIAlertController(
+                  title: CriptoStrings.somethingWrong,
+                  message: apiError.message,
+                  preferredStyle: .alert
+              )
+              
+              let action = UIAlertAction(title: CriptoStrings.tryAgain, style: .default) { _ in
+                  self.startLoading()
+                  self.interactor.loadExchangeList()
+              }
+              
+              alert.addAction(action)
+              self.present(alert, animated: true)
+          }
     }
     
 }
