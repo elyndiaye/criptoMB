@@ -10,9 +10,8 @@ import Foundation
 import UIKit
 
 class CriptoDetailPresenter {
-    
     // MARK: Properties
-    var viewController: CriptoDetailViewControllerProtocol?
+   weak var viewController: CriptoDetailViewControllerProtocol?
 }
 
 extension CriptoDetailPresenter: CriptoDetailPresenterProtocol {

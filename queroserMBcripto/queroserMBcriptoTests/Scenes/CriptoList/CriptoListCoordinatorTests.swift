@@ -9,7 +9,7 @@ import XCTest
 @testable import queroserMBcripto
 
 final class CriptoListCoordinatorTests: XCTestCase {
-
+    
     var coordinator: CriptoListCoordinator!
     
     override func setUp() {
@@ -24,7 +24,7 @@ final class CriptoListCoordinatorTests: XCTestCase {
         
         XCTAssertTrue(coordinator.navigationController.viewControllers.contains { $0 is CriptoDetailViewController })
     }
-        
-    }
+    
+}
 
 
